@@ -5,7 +5,7 @@ int main()
  int m;      
  int i,j,k,cnt,cntt;
  int avail[10],p[10];
- int need[10][10],alloc[10][10],max[10][10];
+ int nd[10][10],alloc[10][10],max[10][10];
 
  printf("\nEnter number of process :");
  scanf("%d",&n);
@@ -41,8 +41,8 @@ int main()
  printf("\np%d\t",i+1) ;
  for(j=0;j<m;j++)
  {
-  need[i][j]=max[i][j]-alloc[i][j];
-  printf("\t%d",need[i][j]);
+  nd[i][j]=max[i][j]-alloc[i][j];
+  printf("\t%d",nd[i][j]);
   }
  }
  k=0;     cntt=0;
@@ -54,7 +54,7 @@ int main()
  for(j=0;j<m;j++)
  {
   if(p[i]==1) break;
-  if(need[i][j]<=avail[j])
+  if(nd[i][j]<=avail[j])
   {
   cnt++;
   }
